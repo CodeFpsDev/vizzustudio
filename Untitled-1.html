@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizzu Studio | Agencia de Diseño</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">VIZZU <span>STUDIO</span></div>
+          <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <!-- Reemplaza 595981123456 por tu número real -->
+    <li><a href="https://wa.me/595981123456?text=Hola%20Vizzu%20Studio!%20Me%20gustaría%20consultar%20por%20un%20servicio%20de%20diseño." target="_blank" class="btn-contacto">Contacto</a></li>
+</ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Creatividad que Impulsa tu Marca</h1>
+        <p>Logos | Flyers | Retoque Profesional</p>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-container">
+            
+            <!-- Botón de Logos -->
+            <a href="logos.html" class="card-link">
+                <div class="card">
+                    <h3>Diseño de Logos</h3>
+                    <p>Identidad visual única que conecta con tu audiencia.</p>
+                </div>
+            </a>
+
+            <!-- Botón de Flyers -->
+            <a href="flayers.html" class="card-link">
+                <div class="card">
+                    <h3>Flyers & Publicidad</h3>
+                    <p>Diseños impactantes para redes sociales y eventos.</p>
+                </div>
+            </a>
+
+            <!-- Botón de Retoque -->
+            <a href="retoques.html" class="card-link">
+                <div class="card">
+                    <h3>Retoque Fotográfico</h3>
+                    <p>Edición de alta gama para resaltar cada detalle.</p>
+                </div>
+            </a>
+</div>
+
+    <p style="color: #444; font-size: 13px;">&copy; 2026 Vizzu Studio. Todos los derechos reservados.</p>
+</footer>
+
+<a href="https://wa.me/5959XXXXXXXX?text=Hola%20Vizzu%20Studio!%20Vi%20tu%20página%20web%20y%20quiero%20consultar%20por%20un%20diseño." 
+   class="whatsapp-float" 
+   target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+        </div>
+    </section>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBQ7z4xI6vBYJdXK3sFdmM-pSeraC-29SQ",
+    authDomain: "vizzu-web.firebaseapp.com",
+    projectId: "vizzu-web",
+    storageBucket: "vizzu-web.firebasestorage.app",
+    messagingSenderId: "400815616183",
+    appId: "1:400815616183:web:f7a965d71ff23780301d32",
+    measurementId: "G-YPJWKQ820Z"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

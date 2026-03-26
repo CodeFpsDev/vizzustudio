@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retoque Fotográfico | Vizzu Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .seccion-retoque {
+            padding: 80px 5%;
+            background-color: #121212;
+            text-align: center;
+        }
+
+        .titulo-retoque h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .titulo-retoque span {
+            color: #e63946; /* Rojo Vizzu */
+        }
+
+        .grid-retoque {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        /* Contenedor del efecto Antes/Después */
+        .retoque-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid #333;
+            cursor: crosshair;
+        }
+
+        .foto-despues {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .foto-antes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.5s ease;
+            z-index: 2;
+        }
+
+        /* El efecto: Al pasar el mouse, la foto "Antes" desaparece */
+        .retoque-container:hover .foto-antes {
+            opacity: 0;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 20px;
+            padding: 5px 15px;
+            background: rgba(230, 57, 70, 0.9);
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .label-antes { left: 20px; }
+        .label-despues { right: 20px; opacity: 0; transition: 0.5s; }
+
+        .retoque-container:hover .label-despues { opacity: 1; }
+        .retoque-container:hover .label-antes { opacity: 0; }
+
+        .desc-trabajo {
+            margin-top: 15px;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .btn-inicio {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 40px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #e63946;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-inicio:hover {
+            background-color: #e63946;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">VIZZU <span>STUDIO</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <!-- Botón de WhatsApp añadido aquí -->
+                <li><a href="https://wa.me/TU_NUMERO_AQUI?text=Hola!%20Me%20interesa%20el%20servicio%20de%20retoque%20fotográfico" target="_blank" class="btn-contacto">Pedir Retoque</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="seccion-retoque">
+        <div class="titulo-retoque">
+            <h1>Retoque <span>Profesional</span></h1>
+            <p>Pasa el mouse sobre las imágenes para ver la transformación.</p>
+        </div>
+
+        <div class="grid-retoque">
+            
+            <!-- Ejemplo 1 -->
+            <div class="item-retoque">
+                <div class="retoque-container">
+                    <div class="label label-antes">ANTES</div>
+                    <div class="label label-despues">DESPUÉS</div>
+                    <!-- Asegúrate de tener estas imágenes en tu carpeta img -->
+                    <div class="foto-antes" style="background-image: url('img/original1.jpg');"></div>
+                    <div class="foto-despues" style="background-image: url('img/editada1.jpg');"></div>
+                </div>
+                <p class="desc-trabajo">Corrección de color y piel para retrato corporativo.</p>
+            </div>
+
+            <!-- Ejemplo 2 -->
+            <div class="item-retoque">
+                <div class="retoque-container">
+                    <div class="label label-antes">ANTES</div>
+                    <div class="label label-despues">DESPUÉS</div>
+                    <div class="foto-antes" style="background-image: url('img/original2.jpg');"></div>
+                    <div class="foto-despues" style="background-image: url('img/editada2.jpg');"></div>
+                </div>
+                <p class="desc-trabajo">Restauración de fondo e iluminación comercial.</p>
+            </div>
+
+        </div>
+
+        <a href="Untitled-1.html" class="btn-inicio">← Volver al Menú Principal</a>
+    </main>
+
+    <footer style="text-align: center; padding: 50px; color: #555;">
+        Vizzu Studio &copy; 2026 | Todos los derechos reservados.
+    </footer>
+<!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/5959XXXXXXXX?text=Hola%20Vizzu%20Studio!%20Vi%20tu%20página%20web%20y%20quiero%20consultar%20por%20un%20diseño." 
+   class="whatsapp-float" 
+   target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBQ7z4xI6vBYJdXK3sFdmM-pSeraC-29SQ",
+    authDomain: "vizzu-web.firebaseapp.com",
+    projectId: "vizzu-web",
+    storageBucket: "vizzu-web.firebasestorage.app",
+    messagingSenderId: "400815616183",
+    appId: "1:400815616183:web:f7a965d71ff23780301d32",
+    measurementId: "G-YPJWKQ820Z"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
