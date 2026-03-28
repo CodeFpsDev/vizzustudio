@@ -108,16 +108,29 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">VIZZU <span>STUDIO</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <!-- Botón de WhatsApp añadido aquí -->
-                <li><a href="https://wa.me/595982309464?text=Hola!%20Me%20interesa%20el%20servicio%20de%20retoque%20fotográfico" target="_blank" class="btn-contacto">Pedir Retoque</a></li>
-            </ul>
-        </nav>
-    </header>
+     <header>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <!-- Este se ve en PC -->
+                <span class="logo-texto-pc">VIZZU STUDIO</span>
+                <!-- Este se ve en Celu -->
+                <img src="logo-vizzu.png" class="logo-imagen-cel" alt="Vizzu Logo">
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="https://wa.me/595982309464?text=Hola%20Vizzu%20Studio!%20Me%20gustaría%20cpedir%20un%20Diseño%20de%20Retoque." 
+                   target="_blank" 
+                   class="btn-contacto">
+                   Pedir Retoque
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <main class="seccion-retoque">
         <div class="titulo-retoque">
@@ -152,27 +165,21 @@
 
         </div>
 
-        <a href="Untitled-1.html" class="btn-inicio">← Volver al Menú Principal</a>
+        <a href="index.html" class="btn-inicio">← Volver al Menú Principal</a>
     </main>
 
     <footer style="text-align: center; padding: 50px; color: #555;">
         Vizzu Studio &copy; 2026 | Todos los derechos reservados.
     </footer>
-<!-- Botón Flotante de WhatsApp -->
 <a href="https://wa.me/595982309464?text=Hola%20Vizzu%20Studio!%20Vi%20tu%20página%20web%20y%20quiero%20consultar%20por%20un%20diseño." 
    class="whatsapp-float" 
    target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
 </a>
 <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyBQ7z4xI6vBYJdXK3sFdmM-pSeraC-29SQ",
     authDomain: "vizzu-web.firebaseapp.com",
@@ -183,7 +190,6 @@
     measurementId: "G-YPJWKQ820Z"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
