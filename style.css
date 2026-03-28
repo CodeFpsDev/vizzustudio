@@ -1,5 +1,5 @@
 :root {
-    --rojo-vizzu: #e63946; /* Un rojo intenso y moderno */
+    --rojo-vizzu: #e63946;
     --blanco: #ffffff;
     --oscuro: #121212;
     --gris-suave: #1f1f1f;
@@ -12,7 +12,7 @@ body {
     color: var(--blanco);
 }
 
-/* Navbar con los colores de la marca */
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -21,19 +21,57 @@ body {
     background-color: var(--gris-suave);
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
+/* --- LOGO: RECUADRO ROJO --- */
 .logo {
     background-color: var(--rojo-vizzu);
-    color: var(--blanco);
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 1.5rem;
-    border-radius: 4px;
+    height: 90px;           /* Altura potente para PC */
+    width: 320px;          /* Ancho para que luzca el texto o la imagen */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 5px;          /* Padding mínimo para que el logo crezca al máximo */
 }
+
+/* TEXTO PARA PC (Index) */
+.logo-texto-pc {
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 2.2rem;
+    display: block; 
+    letter-spacing: 1px;
+}
+
+/* IMAGEN DEL LOGO (Para que se vea GRANDE) */
+.logo-oficial, .logo-imagen-cel {
+    height: 95%;           /* Ocupa casi todo el alto del recuadro rojo */
+    width: 95%;            /* Ocupa casi todo el ancho */
+    object-fit: contain;    /* No se deforma */
+    filter: brightness(0) invert(1);
+    display: block;        /* Aseguramos que se vea si no hay texto */
+}
+
+/* En el Index ocultamos la imagen en PC porque usamos texto */
+.logo-imagen-cel {
+    display: none; 
+}
+
+.logo-link:hover .logo {
+    background-color: #c02d38;
+    transform: scale(1.05);
+}
+
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     padding: 0;
     margin: 0;
 }
@@ -41,6 +79,7 @@ body {
 .nav-links a {
     color: var(--blanco);
     text-decoration: none;
+    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -48,7 +87,7 @@ body {
     color: var(--rojo-vizzu);
 }
 
-/* Hero Section */
+
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -56,112 +95,118 @@ body {
     background-size: cover;
 }
 
-/* Tarjetas de Servicios */
-.services {
-    padding: 50px 5%;
-    text-align: center;
-}
+
+.services { padding: 50px 5%; text-align: center; }
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     margin-top: 30px;
 }
 
 .card-link {
     text-decoration: none;
-    color: inherit;
+    color: inherit; 
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .card {
     background-color: var(--gris-suave);
-    padding: 30px;
+    padding: 40px 30px;
     border-bottom: 4px solid var(--rojo-vizzu);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    background-color: #1a1a1a;
+.card-link:hover {
+    transform: translateY(-12px); 
 }
 
-/* Estilos para el Botón Flotante de WhatsApp */
+.card-link:hover .card {
+    background-color: #252525;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+
 .whatsapp-float {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    text-decoration: none;
+    position: fixed; width: 50px; height: 50px; bottom: 30px; right: 30px;
+    background-color: #25d366; border-radius: 50px; display: flex;
+    justify-content: center; align-items: center; z-index: 1000;
+    transition: 0.3s;
 }
 
-.whatsapp-icon {
-    width: 28px;
-    height: 28px;
-}
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #128c7e;
-    box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.5);
-}
-
-/* AJUSTES PARA MÓVILES (Celulares y Tablets) */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Logo arriba, links abajo */
-        gap: 15px;
-        padding: 20px 15px;
-        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        height: 70px;      
+        width: 190px;       
+        margin: 0 auto;
+        padding: 2px;       
+    }
+
+    .logo-texto-pc {
+        display: none; 
+    }
+
+    .logo-imagen-cel {
+        display: block;     
+        height: 220%;
+        width: 190%;
     }
 
     .nav-links {
-        justify-content: center; /* Centra las palabras horizontalmente */
+        justify-content: center;
         width: 100%;
         gap: 15px;
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .services-container {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-
-    .whatsapp-float {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .whatsapp-icon {
-        width: 24px;
-        height: 24px;
     }
 }
-
-/* Ajustes específicos para pantallas muy chicas */
-@media (max-width: 480px) {
-    .retoque-container {
-        height: 250px;
-    }
+/* --- LIGHTBOX INFALIBLE --- */
+.lightbox {
+    display: none; /* Se activa con JS */
+    position: fixed;
+    z-index: 9999; /* Por encima de TODO */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
     
-    .titulo-retoque h1 {
-        font-size: 2rem;
-    }
+    /* Centrado absoluto */
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.lightbox.activo {
+    display: flex !important;
+}
+
+.lightbox-content {
+    max-width: 90%; 
+    max-height: 85vh; 
+    width: auto;
+    height: auto;
+    object-fit: contain; 
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
 }
