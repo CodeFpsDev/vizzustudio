@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Logos | Vizzu Studio</title>
-    <!-- Vinculamos el mismo CSS que ya tienes para mantener la coherencia -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para la galería de logos */
         .galeria-logos {
             padding: 80px 5%;
             background-color: #121212;
@@ -25,7 +23,7 @@
         }
 
         .header-galeria span {
-            color: #e63946; /* Rojo Vizzu */
+            color: #e63946; 
         }
 
         .grid-logos {
@@ -90,24 +88,27 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">VIZZU <span>STUDIO</span></div>
-            <ul class="nav-links">
-           <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li>
-    <!-- Botón de Cotizar Logo directo a WhatsApp -->
-    <li>
-        <a href="https://wa.me/595982309464?text=Hola%20Vizzu%20Studio!%20Me%20gustaría%20cotizar%20un%20Diseño%20de%20Logo." 
-           target="_blank" 
-           class="btn-contacto">
-           Cotizar Logo
+  <header>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <span class="logo-texto-pc">VIZZU STUDIO</span>
+                <img src="logo-vizzu.png" class="logo-imagen-cel" alt="Vizzu Logo">
+            </div>
         </a>
-    </li>
-</ul>
-        </nav>
-    </header>
 
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="https://wa.me/595982309464?text=Hola%20Vizzu%20Studio!%20Me%20gustaría%20cotizar%20un%20Diseño%20de%20Logo." 
+                   target="_blank" 
+                   class="btn-contacto">
+                   Cotizar Logo
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
     <main class="galeria-logos">
         <div class="header-galeria">
             <h1>Diseño de <span>Logos</span></h1>
@@ -115,38 +116,40 @@
         </div>
 
         <div class="grid-logos">
-            <!-- Logo 1 -->
             <div class="logo-item">
-                <img src="img/logo-ejemplo1.png" alt="Diseño de Logo 1">
+                <img src="LOGO-DA.png" alt="Diseño de Logo 1">
                 <div class="logo-nombre">Nombre de Marca 1</div>
             </div>
 
-            <!-- Logo 2 -->
             <div class="logo-item">
-                <img src="img/logo-ejemplo2.png" alt="Diseño de Logo 2">
+                <img src="Recurso 3@3x-8.png" alt="Diseño de Logo 2">
                 <div class="logo-nombre">Nombre de Marca 2</div>
             </div>
 
-            <!-- Logo 3 -->
             <div class="logo-item">
-                <img src="img/logo-ejemplo3.png" alt="Diseño de Logo 3">
+                <img src="LOGO-QUINTA-FECHA.png" alt="Diseño de Logo 3">
                 <div class="logo-nombre">Nombre de Marca 3</div>
             </div>
 
-            <!-- Logo 4 -->
             <div class="logo-item">
-                <img src="img/logo-ejemplo4.png" alt="Diseño de Logo 4">
+                <img src="shiro-crypto-SIN-FONDO.png" alt="Diseño de Logo 4">
                 <div class="logo-nombre">Nombre de Marca 4</div>
+            </div>
+
+            <div class="logo-item">
+                <img src="XANGRIA-FINAL-LOG.jpg" alt="Diseño de Logo 5">
+                <div class="logo-nombre">Nombre de Marca 5</div>
             </div>
         </div>
 
-        <a href="Untitled-1.html" class="btn-volver">← Volver al Inicio</a>
+        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
     </main>
 
     <footer style="text-align: center; padding: 40px; color: #666;">
         &copy; 2024 Vizzu Studio - Todos los derechos reservados.
     </footer>
-</div>
+    <p style="color: #444; font-size: 13px;">&copy; 2026 Vizzu Studio. Todos los derechos reservados.</p>
+</footer>
 
 <a href="https://wa.me/595982309464?text=Hola%20Vizzu%20Studio!%20Vi%20tu%20página%20web%20y%20quiero%20consultar%20por%20un%20diseño." 
    class="whatsapp-float" 
@@ -154,14 +157,9 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
 </a>
 <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyBQ7z4xI6vBYJdXK3sFdmM-pSeraC-29SQ",
     authDomain: "vizzu-web.firebaseapp.com",
@@ -172,7 +170,6 @@
     measurementId: "G-YPJWKQ820Z"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
