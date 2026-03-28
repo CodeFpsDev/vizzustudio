@@ -67,7 +67,7 @@ body {
     transform: scale(1.05);
 }
 
-
+/* --- LINKS NAVEGACIÓN --- */
 .nav-links {
     list-style: none;
     display: flex;
@@ -87,7 +87,7 @@ body {
     color: var(--rojo-vizzu);
 }
 
-
+/* --- HERO SECTION --- */
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -95,7 +95,7 @@ body {
     background-size: cover;
 }
 
-
+/* --- SECCIÓN SERVICIOS (TARJETAS CON SALTO) --- */
 .services { padding: 50px 5%; text-align: center; }
 
 .services-container {
@@ -121,7 +121,7 @@ body {
 }
 
 .card-link:hover {
-    transform: translateY(-12px); 
+    transform: translateY(-12px); /* El efecto de salto */
 }
 
 .card-link:hover .card {
@@ -129,15 +129,50 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-
+/* --- BOTÓN WHATSAPP CORREGIDO --- */
 .whatsapp-float {
-    position: fixed; width: 50px; height: 50px; bottom: 30px; right: 30px;
-    background-color: #25d366; border-radius: 50px; display: flex;
-    justify-content: center; align-items: center; z-index: 1000;
-    transition: 0.3s;
+    position: fixed;
+    width: 60px;         /* Tamaño fijo, ni más ni menos */
+    height: 60px;        /* Tamaño fijo para que sea un círculo perfecto */
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px; /* Lo hace circular */
+    text-align: center;
+    font-size: 30px;     /* Tamaño del icono adentro */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    z-index: 3000;       /* Por encima del Lightbox si es necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
 
+/* Evitar que se agrade en celulares */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 55px;   /* Un poquito más chico en celu para no estorbar */
+        height: 55px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 25px;
+    }
+}
+
+/* Si usás una imagen adentro del botón, este código la frena */
+.whatsapp-float img {
+    width: 60%;        /* La imagen ocupa el 60% del círculo */
+    height: auto;
+}
+
+/* --- RESPONSIVE CELULAR (LOGO 190PX) --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -145,10 +180,10 @@ body {
     }
 
     .logo {
-        height: 70px;      
-        width: 190px;       
+        height: 70px;       /* Un toque más de alto en celu para que el logo respire */
+        width: 190px;       /* TU TAMAÑO DE 190PX */
         margin: 0 auto;
-        padding: 2px;       
+        padding: 2px;       /* Padding mínimo en celu para logo gigante */
     }
 
     .logo-texto-pc {
@@ -156,7 +191,7 @@ body {
     }
 
     .logo-imagen-cel {
-        display: block;     
+        display: block;     /* Forzamos la imagen en el celu */
         height: 220%;
         width: 190%;
     }
@@ -185,17 +220,17 @@ body {
     flex-direction: column;
 }
 
-
+/* Cuando el JS lo activa, cambiamos el display a flex */
 .lightbox.activo {
     display: flex !important;
 }
 
 .lightbox-content {
-    max-width: 90%; 
-    max-height: 85vh; 
+    max-width: 90%;  /* Deja un aire a los costados */
+    max-height: 85vh; /* No permite que sea más alto que el 85% de la pantalla */
     width: auto;
     height: auto;
-    object-fit: contain; 
+    object-fit: contain; /* Clave: ajusta la imagen sin cortarla */
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
